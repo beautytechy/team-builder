@@ -1,15 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import MemberCard from "./MemberCard"
+import Members from "./Members"
+import MemberForm from "./MemberForm"
 
 function App() {
+
   return (
     <div className="App">
-   
-      <MemberCard />
-    
+      <h1>Team Member</h1>
+      <Members />
+      <MemberForm />
+      {/* <MemberForm addNewMember={addNewMember}/> */}
     </div>
-  );
+  )
 }
 
 export default App;

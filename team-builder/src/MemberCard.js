@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
-import Data from "./Data"
+import Data from "./Members"
 
 const MemberCard = props => {
-    console.log (props)
+    console.log ("member card props",props)
 
     return (
-        <div key={props.index}>
-            <h1>Name: {props.name}</h1>
+        <div style={{margin: "10px auto", border: "2px solid red", width:"70%"}} key={props.index}>
+            <p>Name: {props.name}</p>
+            <p>Email: {props.email}</p>
+            <p>Role:{props.role}</p>
             </div>
     )
 }
