@@ -1,22 +1,28 @@
 import React, { useState } from 'react';
 
 
-const MemberForm = () => {
-    const [member, setMember] = useState();
+const MemberForm = (props) => {
+    const [newMember, addnewMember] = useState({});
     const handleChanges = e => {
         console.log(e.target.value);
 
-        setMember({ member: e.target.value })
-        console.log(member);
+        addnewMember({...newMember,[e.target.name]: e.target.value })
+        console.log(newMember);
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const addNewMember = props.addNewMemberprops;
+        addNewMember(newMember)
     }
     return (
-
-        <form>
+      
+        <form onSubmit={handleSubmit}>
             <label htmlFor="name">Name</label>
-            <input id="name"
+            <input
+                id="name"
                 type="text"
                 placeholder="name"
-                name="title"
+                name="name"
                 onChange={handleChanges} />
 
             <label htmlFor="email">Email</label>
@@ -34,13 +40,16 @@ const MemberForm = () => {
                 onChange={handleChanges} />
             <button type="submit">Submit</button>
 
+      
+  
         </form>
-    )
-}
 
-// const submitForm = e => {
-//     e.preventDefault();
-//     props.addNewMember(member);
-//     setMember({name:"", email:"", role:""});
-// };
+    )
+    
+        };
+
+
+
+
+
 export default MemberForm

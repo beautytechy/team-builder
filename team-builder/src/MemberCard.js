@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Data from "./Members"
+
 
 const MemberCard = props => {
     console.log ("member card props",props)
